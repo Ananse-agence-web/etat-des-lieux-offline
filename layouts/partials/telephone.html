@@ -1,0 +1,46 @@
+{{/* Maquette de téléphone avec une mini-démo cliquable de l'application */}}
+<div class="telephone" aria-label="Aperçu interactif de l'application">
+  <div class="telephone-ecran">
+    <div class="app-barre">
+      <span>‹ Studio centre-ville</span>
+      <strong>Sortie du 28/09</strong>
+      <div class="app-progression"><div class="app-progression-barre" data-progression></div></div>
+      <small data-progression-texte>1/4 éléments renseignés</small>
+    </div>
+    <div class="app-titre">Cuisine</div>
+    <div class="app-carte" data-element data-entree="B">
+      <div class="app-ligne"><strong>Évier et robinetterie</strong><span>×1</span></div>
+      <div class="app-ref">Entrée : <b class="pastille e-B">B</b> Inox, bon état</div>
+      <div class="app-etats">
+        <button type="button">TB</button><button type="button">B</button><button type="button">M</button><button type="button" class="actif e-KO">KO</button><button type="button">ABS</button>
+      </div>
+      <div class="app-alerte">⚠ Dégradation : B → KO</div>
+    </div>
+    <div class="app-carte" data-element data-entree="TB">
+      <div class="app-ligne"><strong>Plaques de cuisson</strong><span>×1</span></div>
+      <div class="app-ref">Entrée : <b class="pastille e-TB">TB</b></div>
+      <div class="app-etats">
+        <button type="button">TB</button><button type="button">B</button><button type="button">M</button><button type="button">KO</button><button type="button">ABS</button>
+      </div>
+      <div class="app-alerte" hidden></div>
+    </div>
+    <div class="app-carte" data-element data-entree="B">
+      <div class="app-ligne"><strong>Murs</strong><span>×1</span></div>
+      <div class="app-ref">Entrée : <b class="pastille e-B">B</b> Peinture blanche</div>
+      <div class="app-etats">
+        <button type="button">TB</button><button type="button">B</button><button type="button">M</button><button type="button">KO</button><button type="button">ABS</button>
+      </div>
+      <div class="app-alerte" hidden></div>
+    </div>
+    <div class="app-carte" data-element data-entree="B">
+      <div class="app-ligne"><strong>Sol</strong><span>×1</span></div>
+      <div class="app-ref">Entrée : <b class="pastille e-B">B</b> Carrelage</div>
+      <div class="app-etats">
+        <button type="button">TB</button><button type="button">B</button><button type="button">M</button><button type="button">KO</button><button type="button">ABS</button>
+      </div>
+      <div class="app-alerte" hidden></div>
+      <div class="app-photos"><span class="app-photo">📷</span><span class="app-photo app-photo-img"></span></div>
+    </div>
+  </div>
+  <p class="telephone-legende">👆 Essayez : touchez un état</p>
+</div>

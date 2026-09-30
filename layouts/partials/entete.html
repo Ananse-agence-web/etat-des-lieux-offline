@@ -1,0 +1,20 @@
+<header class="entete">
+  <div class="conteneur entete-inner">
+    <a class="marque" href="{{ "" | relURL }}" aria-label="{{ site.Params.marque }}, accueil">
+      <img src="{{ "images/logo.svg" | relURL }}" alt="" width="36" height="36">
+      <span>État des lieux <strong>Offline</strong></span>
+    </a>
+    <button class="menu-bouton" aria-expanded="false" aria-controls="nav-principale" aria-label="Menu">{{ partial "icone.html" "menu" }}</button>
+    <nav id="nav-principale" class="nav">
+      {{ $base := cond .IsHome "" ("" | relURL) }}
+      <a href="{{ $base }}#donnees">Vos données</a>
+      <a href="{{ $base }}#atouts">Points forts</a>
+      <a href="{{ $base }}#comment">Comment ça marche</a>
+      <a href="{{ $base }}#pour-qui">Pour qui</a>
+      <a href="{{ $base }}#tarifs">Tarifs</a>
+      <a href="{{ $base }}#faq">FAQ</a>
+      <a href="{{ "blog/" | relURL }}">Blog</a>
+      <a class="bouton bouton-petit" href="{{ $base }}#tarifs">Commencer</a>
+    </nav>
+  </div>
+</header>

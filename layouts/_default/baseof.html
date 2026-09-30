@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="{{ if .IsHome }}accueil{{ else }}page{{ end }}">
+  <a class="evitement" href="#contenu">Aller au contenu</a>
+  {{ partial "entete.html" . }}
+  <main id="contenu">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "pied.html" . }}
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+  {{ if or site.Params.paiement.particulierAn site.Params.paiement.particulierVie site.Params.paiement.pro }}
+  <script src="https://app.lemonsqueezy.com/js/lemon.js" defer></script>
+  {{ end }}
+</body>
+</html>

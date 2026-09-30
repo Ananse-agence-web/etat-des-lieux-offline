@@ -1,0 +1,45 @@
+baseURL = "https://etat-des-lieux.ananse.fr/"
+languageCode = "fr-FR"
+defaultContentLanguage = "fr"
+title = "État des lieux Offline"
+enableRobotsTXT = true
+summaryLength = 30
+
+paginate = 9
+
+[markup.goldmark.renderer]
+  unsafe = false
+
+[outputs]
+  home = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
+
+[permalinks]
+  blog = "/blog/:slug/"
+
+[params]
+  # Nom affiché partout (logo, titres, pied de page)
+  marque = "État des lieux Offline"
+  slogan = "L'état des lieux dans votre poche. Aucune donnée envoyée sur un serveur, même sans réseau."
+  description = "Application d'état des lieux d'entrée et de sortie sur téléphone : fonctionne hors-ligne, photos horodatées, comparaison entrée/sortie, signature, rapport PDF. Vos données ne sont envoyées sur aucun serveur : elles restent dans votre téléphone."
+
+  # Contact (à compléter)
+  email = "Ananse.Agence.Web@gmail.com"
+
+  # Démo en ligne de l'application (laisser vide pour masquer le bouton)
+  demoUrl = ""
+
+  # Vidéo hébergée sur le site (prioritaire), générée par video/3_montage.py
+  videoFichier = "video/demo.mp4"
+  videoAffiche = "video/affiche.jpg"
+  # Sinon vidéo YouTube : uniquement l'identifiant. Vide = emplacement « bientôt ».
+  videoYoutubeId = ""
+
+  # ---- Paiement Lemon Squeezy : coller ici les liens « Checkout » (Store > Products > Share) ----
+  # Laisser vide tant que ce n'est pas prêt : le bouton ouvre alors un e-mail.
+  [params.paiement]
+    particulierAn = ""
+    particulierVie = ""
+    pro = ""

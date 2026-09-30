@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article class="conteneur conteneur-etroit contenu-page">
+  {{ if eq .Section "blog" }}
+  <p class="fil"><a href="{{ "blog/" | relURL }}">‹ Blog</a></p>
+  {{ end }}
+  <h1>{{ .Title }}</h1>
+  {{ if eq .Section "blog" }}
+  <p class="article-meta">{{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min de lecture</p>
+  {{ end }}
+  <div class="prose">
+    {{ .Content }}
+  </div>
+  {{ if eq .Section "blog" }}
+  <aside class="encart encart-cta">
+    <div class="encart-icone">📱</div>
+    <div>
+      <h3>Faites vos états des lieux sur téléphone</h3>
+      <p>Hors-ligne, photos horodatées, comparaison entrée/sortie automatique, rapport PDF. Payé une fois.</p>
+      <a class="bouton" href="{{ "" | relURL }}#tarifs">Découvrir {{ site.Params.marque }}</a>
+    </div>
+  </aside>
+  {{ end }}
+</article>
+{{ end }}

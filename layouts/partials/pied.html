@@ -1,0 +1,29 @@
+<footer class="pied">
+  <div class="conteneur pied-grille">
+    <div>
+      <a class="marque" href="{{ "" | relURL }}">
+        <img src="{{ "images/logo.svg" | relURL }}" alt="" width="32" height="32">
+        <span>État des lieux <strong>Offline</strong></span>
+      </a>
+      <p class="pied-texte">L'état des lieux d'entrée et de sortie sur téléphone. Aucune donnée envoyée sur un serveur : tout reste dans votre téléphone.</p>
+      <p class="pied-texte">🍪 Ce site n'utilise <strong>aucun cookie</strong> ni traceur.</p>
+    </div>
+    <div>
+      <h3>Produit</h3>
+      <a href="{{ "" | relURL }}#atouts">Points forts</a>
+      <a href="{{ "" | relURL }}#tarifs">Tarifs</a>
+      <a href="{{ "" | relURL }}#faq">Questions fréquentes</a>
+      <a href="{{ "blog/" | relURL }}">Blog</a>
+    </div>
+    <div>
+      <h3>Informations</h3>
+      <a href="{{ "mentions-legales/" | relURL }}">Mentions légales</a>
+      <a href="{{ "cgv/" | relURL }}">Conditions générales</a>
+      <a href="{{ "confidentialite/" | relURL }}">Confidentialité</a>
+      <a href="mailto:{{ site.Params.email }}">Contact</a>
+    </div>
+  </div>
+  <div class="conteneur pied-bas">
+    <small>© {{ now.Year }} {{ site.Params.marque }}. Les informations juridiques de ce site sont générales et ne remplacent pas un conseil personnalisé.</small>
+  </div>
+</footer>

@@ -1,0 +1,42 @@
+{
+  "01_intro": {
+    "fichier": "01_intro.wav",
+    "duree": 4.784671201814059
+  },
+  "02_donnees": {
+    "fichier": "02_donnees.wav",
+    "duree": 8.142471655328798
+  },
+  "03_etats": {
+    "fichier": "03_etats.wav",
+    "duree": 7.051972789115646
+  },
+  "04_photos": {
+    "fichier": "04_photos.wav",
+    "duree": 7.911678004535148
+  },
+  "05_sortie": {
+    "fichier": "05_sortie.wav",
+    "duree": 6.896303854875283
+  },
+  "06_ecarts": {
+    "fichier": "06_ecarts.wav",
+    "duree": 5.324263038548753
+  },
+  "07_signature": {
+    "fichier": "07_signature.wav",
+    "duree": 4.59297052154195
+  },
+  "08_rapport": {
+    "fichier": "08_rapport.wav",
+    "duree": 4.919750566893424
+  },
+  "09_envoi": {
+    "fichier": "09_envoi.wav",
+    "duree": 9.54984126984127
+  },
+  "10_outro": {
+    "fichier": "10_outro.wav",
+    "duree": 8.492766439909298
+  }
+}

@@ -1,0 +1,13 @@
+public/
+resources/_gen/
+.hugo_build.lock
+*.xlsx
+*.xls
+# Vidéo : fichiers générés (régénérables avec video/1_voix.py, 2_capture.py, 3_montage.py)
+video/capture/
+video/sortie/
+video/voix/*.wav
+video/voix/*.txt
+video/voix/_tts.ps1
+!video/voix/*.perso.wav
+__pycache__/
