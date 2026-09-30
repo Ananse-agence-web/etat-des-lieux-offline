@@ -1,6 +1,6 @@
 <article class="carte carte-article">
   <p class="article-meta">{{ .Date | time.Format ":date_long" }} · {{ .ReadingTime }} min de lecture</p>
   <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-  <p>{{ or .Description .Summary | plainify | truncate 150 }}</p>
+  <p>{{ or .Description .Summary | plainify | truncate 260 }}</p>
   <a class="lien-fleche" href="{{ .RelPermalink }}" aria-label="Lire : {{ .Title }}">Lire l'article {{ partial "icone.html" "arrow" }}</a>
 </article>

@@ -28,7 +28,7 @@ En pratique, pour un état des lieux entre un bailleur et un locataire **de bonn
 
 ## Comment renforcer la preuve
 
-Quelques réflexes simples, que {{< marque >}} applique automatiquement :
+Quelques réflexes simples, qu'{{< marque >}} applique automatiquement :
 
 1. **Horodatage et position GPS** enregistrés au moment de la signature.
 2. **Photos datées** : la date et l'heure sont incrustées sur chaque image.
