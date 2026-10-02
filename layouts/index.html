@@ -5,13 +5,13 @@
 <section class="hero">
   <div class="conteneur hero-grille">
     <div class="hero-texte">
-      <p class="surtitre"><span>Hors-ligne</span><span>Aucune donnée envoyée</span><span>Sans compte</span></p>
-      <h1>L'état des lieux <em>dans votre poche</em>, même sans réseau.</h1>
-      <p class="chapo">Entrée, sortie, photos, signatures et rapport PDF, directement sur votre téléphone. La sortie se compare toute seule à l'entrée.</p>
+      <p class="surtitre">{{ site.Data.accueil.a01 | safeHTML }}</p>
+      <h1>{{ site.Data.accueil.a02 | safeHTML }}</h1>
+      <p class="chapo">{{ site.Data.accueil.a03 }}</p>
       <p class="promesse">{{ partial "icone.html" "lock" }}<span><strong>Vos données ne sont envoyées sur aucun serveur.</strong> Logements, locataires, photos et signatures restent <strong>uniquement dans votre téléphone</strong>. Personne d'autre que vous n'y a accès, pas même nous.</span></p>
       <div class="actions">
         <a class="bouton bouton-grand" href="#tarifs">Voir les tarifs {{ partial "icone.html" "arrow" }}</a>
-        {{ with $p.demoUrl }}<a class="bouton bouton-grand bouton-secondaire" href="{{ . }}" target="_blank" rel="noopener">Essayer la démo</a>
+        {{ with $p.demoUrl }}<a class="bouton bouton-grand bouton-secondaire" href="{{ . }}" target="_blank" rel="noopener">{{ site.Data.accueil.a04 }}</a>
         {{ else }}<a class="bouton bouton-grand bouton-secondaire" href="#video">{{ partial "icone.html" "play" }} Voir en vidéo</a>{{ end }}
       </div>
       <ul class="rassurance">
@@ -27,28 +27,28 @@
 <!-- ===== Chiffres clés ===== -->
 <section class="chiffres">
   <div class="conteneur chiffres-grille">
-    <div><strong>0</strong><span>réseau nécessaire sur place</span></div>
-    <div><strong>0</strong><span>donnée envoyée sur Internet</span></div>
-    <div><strong>1 tap</strong><span>par élément inspecté</span></div>
-    <div><strong>1 fois</strong><span>payé, pas d'abonnement obligatoire</span></div>
+    <div><strong>0</strong><span>{{ site.Data.accueil.a05 }}</span></div>
+    <div><strong>0</strong><span>{{ site.Data.accueil.a06 }}</span></div>
+    <div><strong>{{ site.Data.accueil.a07 }}</strong><span>{{ site.Data.accueil.a08 }}</span></div>
+    <div><strong>{{ site.Data.accueil.a09 }}</strong><span>{{ site.Data.accueil.a10 }}</span></div>
   </div>
 </section>
 
 <!-- ===== Données : rien n'est envoyé ===== -->
 <section id="donnees" class="section section-donnees">
   <div class="conteneur">
-    <p class="section-surtitre">Vos données</p>
-    <h2>Rien ne part sur Internet. Tout reste dans votre téléphone.</h2>
-    <p class="section-intro">La plupart des applications envoient vos états des lieux (noms, adresses, photos, signatures de vos locataires) sur leurs serveurs, quelque part « dans le cloud ». <strong>Pas la nôtre.</strong></p>
+    <p class="section-surtitre">{{ site.Data.accueil.a11 }}</p>
+    <h2>{{ site.Data.accueil.a12 }}</h2>
+    <p class="section-intro">{{ site.Data.accueil.a13 | safeHTML }}</p>
     <div class="schema-donnees" aria-hidden="true">
-      <div class="schema-bloc schema-ok">{{ partial "icone.html" "phone" }}<strong>Votre téléphone</strong><small>Toutes vos données sont ici</small></div>
+      <div class="schema-bloc schema-ok">{{ partial "icone.html" "phone" }}<strong>{{ site.Data.accueil.a14 }}</strong><small>{{ site.Data.accueil.a15 }}</small></div>
       <div class="schema-fleche"><span></span><b>{{ partial "icone.html" "x" }}</b><span></span></div>
-      <div class="schema-bloc schema-non">{{ partial "icone.html" "building" }}<strong>Serveur, « cloud »</strong><small>Aucune donnée envoyée</small></div>
+      <div class="schema-bloc schema-non">{{ partial "icone.html" "building" }}<strong>{{ site.Data.accueil.a16 }}</strong><small>{{ site.Data.accueil.a17 }}</small></div>
     </div>
     <div class="donnees-grille">
-      <div><h3>📱 Enregistré dans le téléphone</h3><p>Chaque logement, chaque photo, chaque signature est enregistrée dans la mémoire de votre téléphone, comme vos photos de vacances.</p></div>
-      <div><h3>🚫 Aucun serveur, aucun compte</h3><p>Pas d'inscription, pas de mot de passe, pas de base de données chez nous. Nous ne pouvons pas voir vos données, même si nous le voulions.</p></div>
-      <div><h3>✉️ Vous décidez de ce qui sort</h3><p>Le seul moment où un document quitte votre téléphone, c'est quand <strong>vous</strong> envoyez le rapport PDF, depuis votre propre messagerie.</p></div>
+      <div><h3>{{ site.Data.accueil.a18 }}</h3><p>{{ site.Data.accueil.a19 }}</p></div>
+      <div><h3>{{ site.Data.accueil.a20 }}</h3><p>{{ site.Data.accueil.a21 }}</p></div>
+      <div><h3>{{ site.Data.accueil.a22 }}</h3><p>{{ site.Data.accueil.a23 | safeHTML }}</p></div>
     </div>
   </div>
 </section>
@@ -56,11 +56,11 @@
 <!-- ===== Points forts ===== -->
 <section id="atouts" class="section">
   <div class="conteneur">
-    <p class="section-surtitre">Points forts</p>
-    <h2>Pensé pour le terrain, pas pour le bureau</h2>
-    <p class="section-intro">Beaucoup d'applications demandent un compte, une connexion et des crédits à racheter. La nôtre marche dans une cave, sans réseau, avec une seule main libre.</p>
+    <p class="section-surtitre">{{ site.Data.accueil.a24 }}</p>
+    <h2>{{ site.Data.accueil.a25 }}</h2>
+    <p class="section-intro">{{ site.Data.accueil.a26 }}</p>
     <div class="vedettes">
-      {{ range where site.Data.atouts "vedette" true }}
+      {{ range where site.Data.atouts.atouts "vedette" true }}
       <article class="carte carte-vedette">
         <div class="carte-icone">{{ partial "icone.html" .icone }}</div>
         <h3>{{ .titre }}</h3>
@@ -69,7 +69,7 @@
       {{ end }}
     </div>
     <div class="atouts">
-      {{ range where site.Data.atouts "vedette" "!=" true }}
+      {{ range where site.Data.atouts.atouts "vedette" "!=" true }}
       <article class="carte">
         <div class="carte-icone petite">{{ partial "icone.html" .icone }}</div>
         <div>
@@ -85,40 +85,28 @@
 <!-- ===== Comment ça marche ===== -->
 <section id="comment" class="section section-teinte">
   <div class="conteneur">
-    <p class="section-surtitre">Comment ça marche</p>
-    <h2>De la visite à l'accord des deux parties</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a27 }}</p>
+    <h2>{{ site.Data.accueil.a28 }}</h2>
     <ol class="etapes">
       <li>
-        <span class="etape-num">1</span>
-        <h3>La visite, sur place</h3>
-        <p>Pièce par pièce, un tap par élément. Photos horodatées, compteurs, clés. Pour une sortie, l'état d'entrée s'affiche à côté de chaque élément.</p>
+        {{ site.Data.accueil.a29 | safeHTML }}
       </li>
       <li>
-        <span class="etape-num">2</span>
-        <h3>La signature</h3>
-        <p>Bailleur et locataire signent au doigt sur le téléphone. Heure et position GPS sont enregistrées, l'état des lieux est verrouillé.</p>
+        {{ site.Data.accueil.a30 | safeHTML }}
       </li>
       <li>
-        <span class="etape-num">3</span>
-        <h3>L'envoi et la confirmation</h3>
-        <p>Le rapport PDF est envoyé <strong>aux deux parties</strong>. Chacune <strong>répond au message</strong> : « Bien reçu, OK ». Cet échange daté vaut accusé de réception.</p>
-        <div class="mail-mock">
-          <div class="mail-entete"><strong>Re : État des lieux d'entrée — Studio centre-ville</strong><small>aujourd'hui, 18:42</small></div>
-          <p>Bien reçu, OK, je confirme l'état des lieux. 👍</p>
-        </div>
+        {{ site.Data.accueil.a31 | safeHTML }}
       </li>
       <li>
-        <span class="etape-num">4</span>
-        <h3>10 jours pour compléter</h3>
-        <p>Comme le prévoit la loi, le locataire dispose de <strong>10 jours</strong> pour demander à compléter l'état des lieux d'entrée (1<sup>er</sup> mois de chauffe pour le chauffage), par simple réponse écrite.</p>
+        {{ site.Data.accueil.a32 | safeHTML }}
       </li>
     </ol>
 
     <aside class="encart">
       <div class="encart-icone">⚖️</div>
       <div>
-        <h3>Signature : une démarche de bonne foi</h3>
-        <p>La signature au doigt est une <strong>signature électronique simple</strong> : elle n'est <strong>pas une signature certifiée</strong> (niveaux « avancé » ou « qualifié » eIDAS). Elle fonctionne dans une <strong>démarche de bonne foi</strong> entre bailleur et locataire, et constitue un élément de preuve renforcé par l'accusé de réception de chacun. En cas de conflit déjà ouvert, faites appel à un commissaire de justice.</p>
+        <h3>{{ site.Data.accueil.a33 }}</h3>
+        <p>{{ site.Data.accueil.a34 | safeHTML }}</p>
       </div>
     </aside>
   </div>
@@ -127,18 +115,18 @@
 <!-- ===== Exemples ===== -->
 <section id="exemples" class="section">
   <div class="conteneur">
-    <p class="section-surtitre">Exemples</p>
-    <h2>Ce que vous obtenez</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a35 }}</p>
+    <h2>{{ site.Data.accueil.a36 }}</h2>
     <div class="exemples">
       <figure class="exemple">
         <div class="synthese-mock">
-          <h4>Synthèse des écarts entrée / sortie</h4>
-          <div class="synthese-ligne degrade"><span>Cuisine — Évier</span><span><b class="pastille e-B">B</b> → <b class="pastille e-KO">KO</b></span></div>
-          <div class="synthese-ligne degrade"><span>Séjour — Murs</span><span><b class="pastille e-TB">TB</b> → <b class="pastille e-M">M</b></span></div>
-          <div class="synthese-ligne degrade"><span>Clés — Badge immeuble</span><span>×2 → ×1</span></div>
-          <div class="synthese-ligne ok"><span>37 autres éléments</span><span>✓ conformes</span></div>
+          <h4>{{ site.Data.accueil.a37 }}</h4>
+          <div class="synthese-ligne degrade"><span>{{ site.Data.accueil.a38 }}</span><span>{{ site.Data.accueil.a39 | safeHTML }}</span></div>
+          <div class="synthese-ligne degrade"><span>{{ site.Data.accueil.a40 }}</span><span>{{ site.Data.accueil.a41 | safeHTML }}</span></div>
+          <div class="synthese-ligne degrade"><span>{{ site.Data.accueil.a42 }}</span><span>×2 → ×1</span></div>
+          <div class="synthese-ligne ok"><span>{{ site.Data.accueil.a43 }}</span><span>{{ site.Data.accueil.a44 }}</span></div>
         </div>
-        <figcaption><strong>Comparaison automatique.</strong> Les dégradations et les éléments manquants sont détectés tout seuls. L'usure normale (Très bon → Bon) n'est pas comptée comme une dégradation.</figcaption>
+        <figcaption>{{ site.Data.accueil.a45 | safeHTML }}</figcaption>
       </figure>
       <figure class="exemple">
         <div class="rapport-mock">
@@ -147,13 +135,13 @@
           <div class="rapport-bloc"><span></span><span></span></div>
           <div class="rapport-h">Cuisine</div>
           <div class="rapport-table">
-            <span>Évier</span><b class="pastille e-B">B</b><b class="pastille e-KO">KO</b><span class="rapport-photo"></span>
-            <span>Plaques</span><b class="pastille e-TB">TB</b><b class="pastille e-TB">TB</b><span></span>
-            <span>Murs</span><b class="pastille e-B">B</b><b class="pastille e-B">B</b><span class="rapport-photo"></span>
+            <span>{{ site.Data.accueil.a46 }}</span><b class="pastille e-B">B</b><b class="pastille e-KO">KO</b><span class="rapport-photo"></span>
+            <span>{{ site.Data.accueil.a47 }}</span><b class="pastille e-TB">TB</b><b class="pastille e-TB">TB</b><span></span>
+            <span>{{ site.Data.accueil.a48 }}</span><b class="pastille e-B">B</b><b class="pastille e-B">B</b><span class="rapport-photo"></span>
           </div>
-          <div class="rapport-sig"><span>Bailleur<i>〰️〰️</i></span><span>Locataire<i>〰️〰️</i></span></div>
+          <div class="rapport-sig"><span>{{ site.Data.accueil.a49 | safeHTML }}</span><span>{{ site.Data.accueil.a50 | safeHTML }}</span></div>
         </div>
-        <figcaption><strong>Rapport PDF professionnel.</strong> Tableau par pièce, photos, compteurs, clés, synthèse, signatures, mentions légales. À votre nom ou au logo de votre agence.</figcaption>
+        <figcaption>{{ site.Data.accueil.a51 | safeHTML }}</figcaption>
       </figure>
     </div>
   </div>
@@ -162,24 +150,24 @@
 <!-- ===== Vidéo ===== -->
 <section id="video" class="section section-sombre">
   <div class="conteneur">
-    <p class="section-surtitre">En vidéo</p>
-    <h2>Un état des lieux complet, en quelques minutes</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a52 }}</p>
+    <h2>{{ site.Data.accueil.a53 }}</h2>
     <div class="video">
       {{ if $p.videoFichier }}
       <video controls preload="none" playsinline poster="{{ $p.videoAffiche | relURL }}">
         <source src="{{ $p.videoFichier | relURL }}" type="video/mp4">
-        Votre navigateur ne lit pas la vidéo : <a href="{{ $p.videoFichier | relURL }}">téléchargez-la</a>.
+        Votre navigateur ne lit pas la vidéo : <a href="{{ $p.videoFichier | relURL }}">{{ site.Data.accueil.a54 }}</a>.
       </video>
       {{ else }}{{ with $p.videoYoutubeId }}
       <button class="video-lanceur" data-youtube="{{ . }}" aria-label="Lire la vidéo">
         <img src="https://i.ytimg.com/vi/{{ . }}/hqdefault.jpg" alt="" loading="lazy">
         <span class="video-play">{{ partial "icone.html" "play" }}</span>
       </button>
-      <p class="video-note">La vidéo est chargée depuis YouTube (sans cookie) seulement si vous cliquez.</p>
+      <p class="video-note">{{ site.Data.accueil.a55 }}</p>
       {{ else }}
       <div class="video-bientot">
         <span class="video-play">{{ partial "icone.html" "play" }}</span>
-        <p>Vidéo de démonstration bientôt disponible</p>
+        <p>{{ site.Data.accueil.a56 }}</p>
       </div>
       {{ end }}{{ end }}
     </div>
@@ -189,28 +177,28 @@
 <!-- ===== Pour qui ===== -->
 <section id="pour-qui" class="section">
   <div class="conteneur">
-    <p class="section-surtitre">Pour qui</p>
-    <h2>Pour tous ceux qui remettent des clés</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a57 }}</p>
+    <h2>{{ site.Data.accueil.a58 }}</h2>
     <div class="personas">
       <article class="carte">
         <div class="carte-icone">{{ partial "icone.html" "home" }}</div>
-        <h3>Propriétaires bailleurs</h3>
-        <p>Un ou plusieurs logements, des baux de 3 à 6 ans. Un état des lieux propre, comparable à la sortie, sans payer à chaque fois.</p>
+        <h3>{{ site.Data.accueil.a59 }}</h3>
+        <p>{{ site.Data.accueil.a60 }}</p>
       </article>
       <article class="carte">
         <div class="carte-icone">{{ partial "icone.html" "building" }}</div>
-        <h3>Petites agences immobilières</h3>
-        <p>Des rapports à votre logo, des modèles de pièces prêts à l'emploi, et aucune donnée client hébergée chez un tiers.</p>
+        <h3>{{ site.Data.accueil.a61 }}</h3>
+        <p>{{ site.Data.accueil.a62 }}</p>
       </article>
       <article class="carte">
         <div class="carte-icone">{{ partial "icone.html" "suitcase" }}</div>
-        <h3>Loueurs Airbnb &amp; courte durée</h3>
-        <p>Un état des lieux express avec photos horodatées à chaque arrivée et départ : des preuves solides en cas de dégâts.</p>
+        <h3>{{ site.Data.accueil.a63 }}</h3>
+        <p>{{ site.Data.accueil.a64 }}</p>
       </article>
       <article class="carte">
         <div class="carte-icone">{{ partial "icone.html" "key" }}</div>
-        <h3>Conciergeries</h3>
-        <p>Toute l'équipe équipée pour 5 € par mois, sans engagement. Rapide sur le terrain, même dans les caves et les parkings.</p>
+        <h3>{{ site.Data.accueil.a65 }}</h3>
+        <p>{{ site.Data.accueil.a66 }}</p>
       </article>
     </div>
   </div>
@@ -219,16 +207,16 @@
 <!-- ===== Comparatif ===== -->
 <section class="section section-teinte">
   <div class="conteneur conteneur-etroit">
-    <p class="section-surtitre">Comparatif</p>
-    <h2>Pourquoi nous plutôt qu'une application classique ?</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a67 }}</p>
+    <h2>{{ site.Data.accueil.a68 }}</h2>
     <div class="comparatif" role="table" aria-label="Comparatif">
-      <div class="comparatif-ligne comparatif-tete" role="row"><span role="columnheader"></span><span role="columnheader">Applications classiques</span><span role="columnheader">{{ $p.marque }}</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Fonctionne sans réseau</span><span role="cell" class="non">Selon l'application</span><span role="cell" class="oui">✓ Toujours</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Compte à créer</span><span role="cell" class="non">Le plus souvent</span><span role="cell" class="oui">✓ Aucun</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Où vont vos données ?</span><span role="cell" class="non">Souvent envoyées sur leurs serveurs</span><span role="cell" class="oui">✓ Nulle part : elles restent dans votre téléphone</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Prix</span><span role="cell" class="non">Souvent à l'acte ou par abonnement</span><span role="cell" class="oui">✓ 50 € une fois**, ou 5 €/an</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Import de vos fichiers Excel</span><span role="cell" class="non">Selon l'application</span><span role="cell" class="oui">✓ Oui</span></div>
-      <div class="comparatif-ligne" role="row"><span role="cell">Comparaison entrée / sortie</span><span role="cell" class="non">Souvent</span><span role="cell" class="oui">✓ Automatique</span></div>
+      <div class="comparatif-ligne comparatif-tete" role="row"><span role="columnheader"></span><span role="columnheader">{{ site.Data.accueil.a69 }}</span><span role="columnheader">{{ $p.marque }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a70 }}</span><span role="cell" class="non">{{ site.Data.accueil.a71 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a72 }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a73 }}</span><span role="cell" class="non">{{ site.Data.accueil.a74 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a75 }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a76 }}</span><span role="cell" class="non">{{ site.Data.accueil.a77 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a78 }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a79 }}</span><span role="cell" class="non">{{ site.Data.accueil.a80 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a81 }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a82 }}</span><span role="cell" class="non">{{ site.Data.accueil.a83 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a84 }}</span></div>
+      <div class="comparatif-ligne" role="row"><span role="cell">{{ site.Data.accueil.a85 }}</span><span role="cell" class="non">{{ site.Data.accueil.a86 }}</span><span role="cell" class="oui">{{ site.Data.accueil.a87 }}</span></div>
     </div>
   </div>
 </section>
@@ -236,11 +224,11 @@
 <!-- ===== Tarifs ===== -->
 <section id="tarifs" class="section">
   <div class="conteneur">
-    <p class="section-surtitre">Tarifs</p>
-    <h2>Simple, transparent, sans surprise</h2>
-    <p class="section-intro">Logements et états des lieux illimités dans toutes les offres. Votre application personnalisée vous est envoyée par e-mail sous 24 h ouvrées.</p>
+    <p class="section-surtitre">{{ site.Data.accueil.a88 }}</p>
+    <h2>{{ site.Data.accueil.a89 }}</h2>
+    <p class="section-intro">{{ site.Data.accueil.a90 }}</p>
     <div class="tarifs">
-      {{ range site.Data.tarifs }}
+      {{ range site.Data.tarifs.tarifs }}
       {{ $lien := index $p.paiement .lien }}
       <article class="tarif{{ if .vedette }} tarif-vedette{{ end }}">
         {{ with .badge }}<span class="tarif-badge">{{ . }}</span>{{ end }}
@@ -254,22 +242,22 @@
         <a class="bouton{{ if not .vedette }} bouton-secondaire{{ end }} lemonsqueezy-button" href="{{ $lien }}?embed=1&amp;media=0">{{ .bouton }}</a>
         {{ else }}
         {{ $sujet := printf "Commande — %s (%s)" .nom .prix | replaceRE " " "%20" }}
-        <a class="bouton{{ if not .vedette }} bouton-secondaire{{ end }}" href="{{ printf "mailto:%s?subject=%s" $p.email $sujet | safeURL }}">{{ .bouton }}</a>
+        <a class="bouton{{ if not .vedette }} bouton-secondaire{{ end }}" href="{{ printf "mailto:%s?subject=%s" site.Data.infos.email $sujet | safeURL }}">{{ .bouton }}</a>
         {{ end }}
       </article>
       {{ end }}
     </div>
-    <p class="note-bas">** <strong>À vie</strong> : accès à l'application et à ses mises à jour tant que le service d'hébergement qui la diffuse est fourni. Dans tous les cas, l'application déjà installée continue de fonctionner hors-ligne et vos exports restent lisibles. Prix TTC. Paiement sécurisé, facture envoyée automatiquement.</p>
+    <p class="note-bas">{{ site.Data.accueil.a91 | safeHTML }}</p>
   </div>
 </section>
 
 <!-- ===== FAQ ===== -->
 <section id="faq" class="section section-teinte">
   <div class="conteneur conteneur-etroit">
-    <p class="section-surtitre">Questions fréquentes</p>
-    <h2>Vous vous demandez sûrement…</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a92 }}</p>
+    <h2>{{ site.Data.accueil.a93 }}</h2>
     <div class="faq">
-      {{ range site.Data.faq }}
+      {{ range site.Data.faq.faq }}
       <details>
         <summary>{{ .q }}</summary>
         <div class="faq-reponse">{{ .r | markdownify }}</div>
@@ -284,8 +272,8 @@
 {{ if $articles }}
 <section class="section">
   <div class="conteneur">
-    <p class="section-surtitre">Le blog</p>
-    <h2>Guides pratiques pour bailleurs</h2>
+    <p class="section-surtitre">{{ site.Data.accueil.a94 }}</p>
+    <h2>{{ site.Data.accueil.a95 }}</h2>
     <div class="articles">
       {{ range $articles }}{{ partial "carte-article.html" . }}{{ end }}
     </div>
@@ -297,8 +285,8 @@
 <!-- ===== Appel final ===== -->
 <section class="cta-final">
   <div class="conteneur">
-    <h2>Votre prochain état des lieux, sans stress et sans réseau.</h2>
-    <p>Payez une fois, utilisez-la pendant toute la durée de vos baux.</p>
+    <h2>{{ site.Data.accueil.a96 }}</h2>
+    <p>{{ site.Data.accueil.a97 }}</p>
     <a class="bouton bouton-grand bouton-clair" href="#tarifs">Choisir mon offre {{ partial "icone.html" "arrow" }}</a>
   </div>
 </section>

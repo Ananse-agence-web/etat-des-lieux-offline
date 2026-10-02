@@ -1,32 +1,33 @@
-- q: La signature au doigt a-t-elle une valeur légale ?
-  r: |
-    C'est une **signature électronique simple**, dessinée sur l'écran. Elle n'est **pas une signature certifiée** (niveaux « avancé » ou « qualifié » du règlement européen eIDAS), et nous ne prétendons pas le contraire.
-    Elle constitue néanmoins un **élément de preuve** qu'un juge peut prendre en compte, dans une démarche de **bonne foi** entre bailleur et locataire. Pour la renforcer, chaque partie reçoit le rapport par e-mail et répond « Bien reçu, OK » : cet échange daté confirme l'accord de chacun.
-    Pour un litige déjà engagé ou une relation conflictuelle, un commissaire de justice reste la solution adaptée.
-- q: Comment les deux parties confirment-elles l'état des lieux ?
-  r: |
-    Une fois signé, le rapport PDF est **envoyé au bailleur et au locataire**. Chacun **répond au message** avec une confirmation du type « Bien reçu, OK, je confirme l'état des lieux ». Cette réponse, horodatée par la messagerie, vaut accusé de réception.
-- q: Peut-on encore modifier l'état des lieux après la signature ?
-  r: |
-    L'état des lieux signé est verrouillé. Conformément à la loi (article 3-2 de la loi du 6 juillet 1989), le locataire dispose de **10 jours** après l'état des lieux d'entrée pour demander à le **compléter** — et du **premier mois de la période de chauffe** pour les éléments de chauffage. Ces compléments se font par écrit, en réponse au message d'envoi ; le bailleur peut alors établir une version complétée.
-- q: Faut-il une connexion internet ?
-  r: |
-    Non. Une fois installée, l'application fonctionne **entièrement hors-ligne** : saisie, photos, signatures et rapport. Seul l'envoi par e-mail attend le retour du réseau.
-- q: Où sont stockées mes données ?
-  r: |
-    Uniquement **dans votre téléphone**. L'application **n'envoie rien sur Internet** : aucun serveur, aucun « cloud », aucun compte, aucune base de données chez nous. Nous ne voyons jamais vos logements, vos locataires ni vos photos. Le seul moment où une donnée sort de votre téléphone, c'est quand **vous** choisissez d'envoyer le rapport par e-mail. Pensez à faire régulièrement une **sauvegarde complète** (un fichier que vous rangez où vous voulez).
-- q: Et si je change de téléphone ?
-  r: |
-    Faites une sauvegarde complète sur l'ancien téléphone, puis importez-la sur le nouveau. Tout est repris : logements, états des lieux, photos, signatures.
-- q: Que veut dire « à vie ** » ?
-  r: |
-    L'offre à vie vous donne accès à l'application et à ses mises à jour **tant que le service d'hébergement qui la diffuse est fourni**. Même dans le cas contraire, l'application déjà installée sur votre téléphone **continue de fonctionner hors-ligne**, et vos exports (PDF, ZIP, sauvegarde) restent lisibles.
-- q: Est-ce adapté à la location courte durée (Airbnb) ?
-  r: |
-    Oui. Un état des lieux rapide avec photos horodatées à chaque arrivée et départ vous donne des preuves solides en cas de dégâts, à transmettre à la plateforme ou au voyageur.
-- q: Comment je reçois l'application après le paiement ?
-  r: |
-    Nous préparons **votre application personnalisée** (à votre nom, ou au logo de votre agence avec l'offre Pro) et vous envoyons le lien d'installation **par e-mail sous 24 h ouvrées**.
-- q: Puis-je importer mes états des lieux Excel existants ?
-  r: |
-    Oui : les fichiers **.xlsx** et **CSV** (y compris ceux enregistrés par Excel avec accents et points-virgules) sont reconnus. Envoyez-nous un exemple si votre format est particulier, nous l'adapterons.
+faq:
+  - q: La signature au doigt a-t-elle une valeur légale ?
+    r: |
+      C'est une **signature électronique simple**, dessinée sur l'écran. Elle n'est **pas une signature certifiée** (niveaux « avancé » ou « qualifié » du règlement européen eIDAS), et nous ne prétendons pas le contraire.
+      Elle constitue néanmoins un **élément de preuve** qu'un juge peut prendre en compte, dans une démarche de **bonne foi** entre bailleur et locataire. Pour la renforcer, chaque partie reçoit le rapport par e-mail et répond « Bien reçu, OK » : cet échange daté confirme l'accord de chacun.
+      Pour un litige déjà engagé ou une relation conflictuelle, un commissaire de justice reste la solution adaptée.
+  - q: Comment les deux parties confirment-elles l'état des lieux ?
+    r: |
+      Une fois signé, le rapport PDF est **envoyé au bailleur et au locataire**. Chacun **répond au message** avec une confirmation du type « Bien reçu, OK, je confirme l'état des lieux ». Cette réponse, horodatée par la messagerie, vaut accusé de réception.
+  - q: Peut-on encore modifier l'état des lieux après la signature ?
+    r: |
+      L'état des lieux signé est verrouillé. Conformément à la loi (article 3-2 de la loi du 6 juillet 1989), le locataire dispose de **10 jours** après l'état des lieux d'entrée pour demander à le **compléter** — et du **premier mois de la période de chauffe** pour les éléments de chauffage. Ces compléments se font par écrit, en réponse au message d'envoi ; le bailleur peut alors établir une version complétée.
+  - q: Faut-il une connexion internet ?
+    r: |
+      Non. Une fois installée, l'application fonctionne **entièrement hors-ligne** : saisie, photos, signatures et rapport. Seul l'envoi par e-mail attend le retour du réseau.
+  - q: Où sont stockées mes données ?
+    r: |
+      Uniquement **dans votre téléphone**. L'application **n'envoie rien sur Internet** : aucun serveur, aucun « cloud », aucun compte, aucune base de données chez nous. Nous ne voyons jamais vos logements, vos locataires ni vos photos. Le seul moment où une donnée sort de votre téléphone, c'est quand **vous** choisissez d'envoyer le rapport par e-mail. Pensez à faire régulièrement une **sauvegarde complète** (un fichier que vous rangez où vous voulez).
+  - q: Et si je change de téléphone ?
+    r: |
+      Faites une sauvegarde complète sur l'ancien téléphone, puis importez-la sur le nouveau. Tout est repris : logements, états des lieux, photos, signatures.
+  - q: Que veut dire « à vie ** » ?
+    r: |
+      L'offre à vie vous donne accès à l'application et à ses mises à jour **tant que le service d'hébergement qui la diffuse est fourni**. Même dans le cas contraire, l'application déjà installée sur votre téléphone **continue de fonctionner hors-ligne**, et vos exports (PDF, ZIP, sauvegarde) restent lisibles.
+  - q: Est-ce adapté à la location courte durée (Airbnb) ?
+    r: |
+      Oui. Un état des lieux rapide avec photos horodatées à chaque arrivée et départ vous donne des preuves solides en cas de dégâts, à transmettre à la plateforme ou au voyageur.
+  - q: Comment je reçois l'application après le paiement ?
+    r: |
+      Nous préparons **votre application personnalisée** (à votre nom, ou au logo de votre agence avec l'offre Pro) et vous envoyons le lien d'installation **par e-mail sous 24 h ouvrées**.
+  - q: Puis-je importer mes états des lieux Excel existants ?
+    r: |
+      Oui : les fichiers **.xlsx** et **CSV** (y compris ceux enregistrés par Excel avec accents et points-virgules) sont reconnus. Envoyez-nous un exemple si votre format est particulier, nous l'adapterons.

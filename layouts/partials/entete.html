@@ -7,14 +7,14 @@
     <button class="menu-bouton" aria-expanded="false" aria-controls="nav-principale" aria-label="Menu">{{ partial "icone.html" "menu" }}</button>
     <nav id="nav-principale" class="nav">
       {{ $base := cond .IsHome "" ("" | relURL) }}
-      <a href="{{ $base }}#donnees">Vos données</a>
-      <a href="{{ $base }}#atouts">Points forts</a>
-      <a href="{{ $base }}#comment">Comment ça marche</a>
-      <a href="{{ $base }}#pour-qui">Pour qui</a>
-      <a href="{{ $base }}#tarifs">Tarifs</a>
-      <a href="{{ $base }}#faq">FAQ</a>
-      <a href="{{ "blog/" | relURL }}">Blog</a>
-      <a class="bouton bouton-petit" href="{{ $base }}#tarifs">Commencer</a>
+      <a href="{{ $base }}#donnees">{{ site.Data.accueil.menu01 }}</a>
+      <a href="{{ $base }}#atouts">{{ site.Data.accueil.menu02 }}</a>
+      <a href="{{ $base }}#comment">{{ site.Data.accueil.menu03 }}</a>
+      <a href="{{ $base }}#pour-qui">{{ site.Data.accueil.menu04 }}</a>
+      <a href="{{ $base }}#tarifs">{{ site.Data.accueil.menu05 }}</a>
+      <a href="{{ $base }}#faq">{{ site.Data.accueil.menu06 }}</a>
+      <a href="{{ "blog/" | relURL }}">{{ site.Data.accueil.menu07 }}</a>
+      <a class="bouton bouton-petit" href="{{ $base }}#tarifs">{{ site.Data.accueil.menu08 }}</a>
     </nav>
   </div>
 </header>

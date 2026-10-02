@@ -1,0 +1,230 @@
+# Decap CMS — https://etat-des-lieux.ananse.fr/admin/
+# Chaque enregistrement crée un commit sur main : Cloudflare republie le site en 1 à 2 minutes.
+backend:
+  name: github
+  repo: Ananse-agence-web/etat-des-lieux-offline
+  branch: main
+  base_url: https://www.ananse.fr
+  auth_endpoint: api/auth
+
+locale: fr
+site_url: https://etat-des-lieux.ananse.fr
+display_url: https://etat-des-lieux.ananse.fr
+logo_url: https://etat-des-lieux.ananse.fr/images/logo.svg
+
+media_folder: static/images/blog
+public_folder: /images/blog
+
+collections:
+  - name: blog
+    label: "📝 Guides (blog)"
+    label_singular: article
+    folder: content/blog
+    create: true
+    slug: "{{fields.slug}}"
+    filter: { field: slug, pattern: "." }
+    preview_path: "blog/{{slug}}/"
+    sortable_fields: [date, title]
+    summary: "{{title}} — {{date | date('DD/MM/YYYY')}}"
+    fields:
+      - { name: title, label: Titre, widget: string }
+      - { name: slug, label: "Adresse (slug)", widget: string, pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "Minuscules, chiffres et tirets, sans accent"], hint: "Donne l'adresse /blog/mon-article/. Ne plus la changer une fois publiée." }
+      - { name: date, label: Date, widget: datetime, format: "YYYY-MM-DD", date_format: "DD/MM/YYYY", time_format: false }
+      - { name: description, label: "Résumé (Google et cartes d'articles)", widget: text }
+      - { name: tags, label: "Thèmes (ex. loi, checklist)", widget: list, required: false }
+      - { name: draft, label: "Brouillon (non publié)", widget: boolean, default: false, required: false }
+      - { name: body, label: Article, widget: markdown }
+
+  - name: accueil
+    label: "🏠 Page d'accueil"
+    editor: { preview: false }
+    files:
+      - name: atouts
+        label: Atouts
+        file: data/atouts.yaml
+        fields:
+          - name: atouts
+            label: Atouts
+            widget: list
+            summary: "{{titre}}"
+            fields:
+              - { name: icone, label: Icône, widget: select, options: [wifi-off, lock, tag, compare, zap, camera, pen, phone, shield, table, palette, mail-check] }
+              - { name: titre, label: Titre, widget: string }
+              - { name: texte, label: Texte, widget: text }
+              - { name: vedette, label: "Mis en avant (grande carte)", widget: boolean, required: false }
+      - name: tarifs
+        label: Tarifs
+        file: data/tarifs.yaml
+        fields:
+          - name: tarifs
+            label: Offres
+            widget: list
+            summary: "{{nom}} — {{prix}} {{periode}}"
+            fields:
+              - { name: id, label: Identifiant, widget: string }
+              - { name: nom, label: Nom, widget: string }
+              - { name: prix, label: "Prix (ex. 5 €)", widget: string }
+              - { name: periode, label: "Période (ex. / an)", widget: string, required: false }
+              - { name: accroche, label: Accroche, widget: string }
+              - { name: badge, label: Badge, widget: string, required: false }
+              - { name: vedette, label: "Mise en avant", widget: boolean, required: false }
+              - { name: inclus, label: Inclus, widget: list, field: { name: point, label: Point, widget: string } }
+              - { name: bouton, label: "Texte du bouton", widget: string }
+              - { name: lien, label: "Lien de paiement (clé dans hugo.toml, ne pas changer)", widget: string }
+      - name: faq
+        label: Questions fréquentes
+        file: data/faq.yaml
+        fields:
+          - name: faq
+            label: Questions
+            widget: list
+            summary: "{{q}}"
+            fields:
+              - { name: q, label: Question, widget: string }
+              - { name: r, label: Réponse, widget: markdown, buttons: [bold, italic, link, bulleted-list], editor_components: [] }
+      - name: textes
+        label: "Tous les textes (accueil, menu, pied de page)"
+        file: data/accueil.yaml
+        fields:
+          - { name: a01, label: "P · Hors-ligneAucune donnée envoyéeSans compte", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a02, label: "H1 · L'état des lieux dans votre poche, même sans réseau.", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a03, label: "P · Entrée, sortie, photos, signatures et rapport PDF, directement sur vot…", widget: text }
+          - { name: a04, label: "A · Essayer la démo", widget: string }
+          - { name: a05, label: "SPAN · réseau nécessaire sur place", widget: string }
+          - { name: a06, label: "SPAN · donnée envoyée sur Internet", widget: string }
+          - { name: a07, label: "STRONG · 1 tap", widget: string }
+          - { name: a08, label: "SPAN · par élément inspecté", widget: string }
+          - { name: a09, label: "STRONG · 1 fois", widget: string }
+          - { name: a10, label: "SPAN · payé, pas d'abonnement obligatoire", widget: string }
+          - { name: a11, label: "P · Vos données", widget: string }
+          - { name: a12, label: "H2 · Rien ne part sur Internet. Tout reste dans votre téléphone.", widget: string }
+          - { name: a13, label: "P · La plupart des applications envoient vos états des lieux (noms, adress…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a14, label: "STRONG · Votre téléphone", widget: string }
+          - { name: a15, label: "SMALL · Toutes vos données sont ici", widget: string }
+          - { name: a16, label: "STRONG · Serveur, « cloud »", widget: string }
+          - { name: a17, label: "SMALL · Aucune donnée envoyée", widget: string }
+          - { name: a18, label: "H3 · 📱 Enregistré dans le téléphone", widget: string }
+          - { name: a19, label: "P · Chaque logement, chaque photo, chaque signature est enregistrée dans l…", widget: text }
+          - { name: a20, label: "H3 · 🚫 Aucun serveur, aucun compte", widget: string }
+          - { name: a21, label: "P · Pas d'inscription, pas de mot de passe, pas de base de données chez no…", widget: text }
+          - { name: a22, label: "H3 · ✉️ Vous décidez de ce qui sort", widget: string }
+          - { name: a23, label: "P · Le seul moment où un document quitte votre téléphone, c'est quand vous…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a24, label: "P · Points forts", widget: string }
+          - { name: a25, label: "H2 · Pensé pour le terrain, pas pour le bureau", widget: string }
+          - { name: a26, label: "P · Beaucoup d'applications demandent un compte, une connexion et des créd…", widget: text }
+          - { name: a27, label: "P · Comment ça marche", widget: string }
+          - { name: a28, label: "H2 · De la visite à l'accord des deux parties", widget: string }
+          - { name: a29, label: "LI · 1 La visite, sur place Pièce par pièce, un tap par élément. Photos hor…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a30, label: "LI · 2 La signature Bailleur et locataire signent au doigt sur le téléphone…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a31, label: "LI · 3 L'envoi et la confirmation Le rapport PDF est envoyé aux deux partie…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a32, label: "LI · 4 10 jours pour compléter Comme le prévoit la loi, le locataire dispos…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a33, label: "H3 · Signature : une démarche de bonne foi", widget: string }
+          - { name: a34, label: "P · La signature au doigt est une signature électronique simple : elle n'e…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a35, label: "P · Exemples", widget: string }
+          - { name: a36, label: "H2 · Ce que vous obtenez", widget: string }
+          - { name: a37, label: "H4 · Synthèse des écarts entrée / sortie", widget: string }
+          - { name: a38, label: "SPAN · Cuisine — Évier", widget: string }
+          - { name: a39, label: "SPAN · B → KO", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a40, label: "SPAN · Séjour — Murs", widget: string }
+          - { name: a41, label: "SPAN · TB → M", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a42, label: "SPAN · Clés — Badge immeuble", widget: string }
+          - { name: a43, label: "SPAN · 37 autres éléments", widget: string }
+          - { name: a44, label: "SPAN · ✓ conformes", widget: string }
+          - { name: a45, label: "FIGCAPTION · Comparaison automatique. Les dégradations et les éléments manquants so…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a46, label: "SPAN · Évier", widget: string }
+          - { name: a47, label: "SPAN · Plaques", widget: string }
+          - { name: a48, label: "SPAN · Murs", widget: string }
+          - { name: a49, label: "SPAN · Bailleur〰️〰️", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a50, label: "SPAN · Locataire〰️〰️", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a51, label: "FIGCAPTION · Rapport PDF professionnel. Tableau par pièce, photos, compteurs, clés,…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a52, label: "P · En vidéo", widget: string }
+          - { name: a53, label: "H2 · Un état des lieux complet, en quelques minutes", widget: string }
+          - { name: a54, label: "A · téléchargez-la", widget: string }
+          - { name: a55, label: "P · La vidéo est chargée depuis YouTube (sans cookie) seulement si vous cl…", widget: string }
+          - { name: a56, label: "P · Vidéo de démonstration bientôt disponible", widget: string }
+          - { name: a57, label: "P · Pour qui", widget: string }
+          - { name: a58, label: "H2 · Pour tous ceux qui remettent des clés", widget: string }
+          - { name: a59, label: "H3 · Propriétaires bailleurs", widget: string }
+          - { name: a60, label: "P · Un ou plusieurs logements, des baux de 3 à 6 ans. Un état des lieux pr…", widget: text }
+          - { name: a61, label: "H3 · Petites agences immobilières", widget: string }
+          - { name: a62, label: "P · Des rapports à votre logo, des modèles de pièces prêts à l'emploi, et …", widget: text }
+          - { name: a63, label: "H3 · Loueurs Airbnb & courte durée", widget: string }
+          - { name: a64, label: "P · Un état des lieux express avec photos horodatées à chaque arrivée et d…", widget: text }
+          - { name: a65, label: "H3 · Conciergeries", widget: string }
+          - { name: a66, label: "P · Toute l'équipe équipée pour 5 € par mois, sans engagement. Rapide sur …", widget: text }
+          - { name: a67, label: "P · Comparatif", widget: string }
+          - { name: a68, label: "H2 · Pourquoi nous plutôt qu'une application classique ?", widget: string }
+          - { name: a69, label: "SPAN · Applications classiques", widget: string }
+          - { name: a70, label: "SPAN · Fonctionne sans réseau", widget: string }
+          - { name: a71, label: "SPAN · Selon l'application", widget: string }
+          - { name: a72, label: "SPAN · ✓ Toujours", widget: string }
+          - { name: a73, label: "SPAN · Compte à créer", widget: string }
+          - { name: a74, label: "SPAN · Le plus souvent", widget: string }
+          - { name: a75, label: "SPAN · ✓ Aucun", widget: string }
+          - { name: a76, label: "SPAN · Où vont vos données ?", widget: string }
+          - { name: a77, label: "SPAN · Souvent envoyées sur leurs serveurs", widget: string }
+          - { name: a78, label: "SPAN · ✓ Nulle part : elles restent dans votre téléphone", widget: string }
+          - { name: a79, label: "SPAN · Prix", widget: string }
+          - { name: a80, label: "SPAN · Souvent à l'acte ou par abonnement", widget: string }
+          - { name: a81, label: "SPAN · ✓ 50 € une fois**, ou 5 €/an", widget: string }
+          - { name: a82, label: "SPAN · Import de vos fichiers Excel", widget: string }
+          - { name: a83, label: "SPAN · Selon l'application", widget: string }
+          - { name: a84, label: "SPAN · ✓ Oui", widget: string }
+          - { name: a85, label: "SPAN · Comparaison entrée / sortie", widget: string }
+          - { name: a86, label: "SPAN · Souvent", widget: string }
+          - { name: a87, label: "SPAN · ✓ Automatique", widget: string }
+          - { name: a88, label: "P · Tarifs", widget: string }
+          - { name: a89, label: "H2 · Simple, transparent, sans surprise", widget: string }
+          - { name: a90, label: "P · Logements et états des lieux illimités dans toutes les offres. Votre a…", widget: text }
+          - { name: a91, label: "P · ** À vie : accès à l'application et à ses mises à jour tant que le ser…", widget: text, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: a92, label: "P · Questions fréquentes", widget: string }
+          - { name: a93, label: "H2 · Vous vous demandez sûrement…", widget: string }
+          - { name: a94, label: "P · Le blog", widget: string }
+          - { name: a95, label: "H2 · Guides pratiques pour bailleurs", widget: string }
+          - { name: a96, label: "H2 · Votre prochain état des lieux, sans stress et sans réseau.", widget: string }
+          - { name: a97, label: "P · Payez une fois, utilisez-la pendant toute la durée de vos baux.", widget: string }
+          - { name: pied01, label: "P · L'état des lieux d'entrée et de sortie sur téléphone. Aucune donnée en…", widget: text }
+          - { name: pied02, label: "P · 🍪 Ce site n'utilise aucun cookie ni traceur.", widget: string, hint: "Les balises <…> font la mise en forme : les garder." }
+          - { name: pied03, label: "H3 · Produit", widget: string }
+          - { name: pied04, label: "A · Points forts", widget: string }
+          - { name: pied05, label: "A · Tarifs", widget: string }
+          - { name: pied06, label: "A · Questions fréquentes", widget: string }
+          - { name: pied07, label: "A · Blog", widget: string }
+          - { name: pied08, label: "H3 · Informations", widget: string }
+          - { name: pied09, label: "A · Mentions légales", widget: string }
+          - { name: pied10, label: "A · Conditions générales", widget: string }
+          - { name: pied11, label: "A · Confidentialité", widget: string }
+          - { name: pied12, label: "A · Contact", widget: string }
+          - { name: menu01, label: "A · Vos données", widget: string }
+          - { name: menu02, label: "A · Points forts", widget: string }
+          - { name: menu03, label: "A · Comment ça marche", widget: string }
+          - { name: menu04, label: "A · Pour qui", widget: string }
+          - { name: menu05, label: "A · Tarifs", widget: string }
+          - { name: menu06, label: "A · FAQ", widget: string }
+          - { name: menu07, label: "A · Blog", widget: string }
+          - { name: menu08, label: "A · Commencer", widget: string }
+  - name: infos
+    label: "ℹ️ Infos"
+    editor: { preview: false }
+    files:
+      - name: infos
+        label: Coordonnées et description
+        file: data/infos.yaml
+        fields:
+          - { name: slogan, label: Slogan, widget: text }
+          - { name: description, label: "Description (Google)", widget: text }
+          - { name: email, label: E-mail de contact, widget: string }
+          - { name: telephone, label: Téléphone, widget: string, required: false }
+          - { name: raison_sociale, label: "Raison sociale", widget: string, required: false }
+          - { name: siret, label: SIRET, widget: string, required: false }
+          - { name: adresse, label: Adresse, widget: string, required: false }
+
+  - name: legal
+    label: "⚖️ Pages"
+    editor: { preview: false }
+    files:
+      - { name: mentions, label: Mentions légales, file: content/mentions-legales.md, fields: &page [ { name: title, label: Titre, widget: string }, { name: description, label: "Description (Google)", widget: text, required: false }, { name: robots, widget: hidden, required: false }, { name: body, label: Texte, widget: markdown } ] }
+      - { name: cgv, label: CGV, file: content/cgv.md, fields: *page }
+      - { name: confidentialite, label: Confidentialité, file: content/confidentialite.md, fields: *page }
+      - { name: merci, label: "Page « merci »", file: content/merci.md, fields: *page }
+      - { name: blog, label: "Blog (en-tête)", file: content/blog/_index.md, fields: [ { name: title, label: Titre, widget: string }, { name: description, label: "Description (Google)", widget: text, required: false } ] }

@@ -1,7 +1,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {{ $titre := cond .IsHome (printf "%s — %s" site.Params.marque "l'état des lieux sur téléphone, même sans réseau") (printf "%s — %s" .Title site.Params.marque) }}
-{{ $desc := or .Description .Summary site.Params.description | plainify | truncate 160 }}
+{{ $desc := or .Description .Summary site.Data.infos.description | plainify | truncate 160 }}
 <title>{{ $titre }}</title>
 <meta name="description" content="{{ $desc }}">
 <link rel="canonical" href="{{ .Permalink }}">
@@ -32,10 +32,10 @@
   "name": {{ site.Params.marque }},
   "applicationCategory": "BusinessApplication",
   "operatingSystem": "iOS, Android, navigateur web",
-  "description": {{ site.Params.description }},
+  "description": {{ site.Data.infos.description }},
   "inLanguage": "fr",
   "offers": [
-    {{- range $i, $o := site.Data.tarifs }}{{ if $i }},{{ end }}
+    {{- range $i, $o := site.Data.tarifs.tarifs }}{{ if $i }},{{ end }}
     { "@type": "Offer", "name": {{ $o.nom }}, "price": {{ replaceRE "[^0-9,.]" "" $o.prix | replaceRE "," "." }}, "priceCurrency": "EUR" }
     {{- end }}
   ]
@@ -46,7 +46,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    {{- range $i, $f := site.Data.faq }}{{ if $i }},{{ end }}
+    {{- range $i, $f := site.Data.faq.faq }}{{ if $i }},{{ end }}
     { "@type": "Question", "name": {{ $f.q }}, "acceptedAnswer": { "@type": "Answer", "text": {{ $f.r | markdownify | plainify }} } }
     {{- end }}
   ]

@@ -1,42 +1,43 @@
 # Offres affichées dans la section Tarifs. « lien » = clé dans [params.paiement] de hugo.toml
-- id: particulierAn
-  nom: Particulier
-  prix: "5 €"
-  periode: "/ an"
-  accroche: Pour louer sereinement un ou plusieurs logements.
-  lien: particulierAn
-  bouton: Choisir l'offre annuelle
-  inclus:
-    - Logements et états des lieux illimités
-    - Entrée, sortie et comparaison automatique
-    - Photos, signatures, rapport PDF
-    - Application à votre nom
-    - Fonctionne hors-ligne
-- id: particulierVie
-  nom: Particulier à vie
-  prix: "50 €"
-  periode: "une fois **"
-  accroche: Payez une fois, utilisez-la pendant toute la durée de vos baux.
-  lien: particulierVie
-  bouton: Acheter à vie
-  vedette: true
-  badge: Le plus rentable
-  inclus:
-    - Tout ce que contient l'offre Particulier
-    - Aucun renouvellement, jamais
-    - Mises à jour incluses **
-    - L'app installée continue de fonctionner, quoi qu'il arrive
-- id: pro
-  nom: Pro
-  prix: "5 €"
-  periode: "/ mois"
-  accroche: Petites agences, conciergeries, gestionnaires Airbnb.
-  lien: pro
-  bouton: Démarrer l'offre Pro
-  inclus:
-    - Tout ce que contient l'offre Particulier
-    - Logo et nom de votre agence sur l'app et les rapports
-    - Modèles de pièces préparés pour vos biens
-    - Installable sur tous les téléphones de l'équipe
-    - Support prioritaire
-    - Sans engagement
+tarifs:
+  - id: particulierAn
+    nom: Particulier
+    prix: "5 €"
+    periode: "/ an"
+    accroche: Pour louer sereinement un ou plusieurs logements.
+    lien: particulierAn
+    bouton: Choisir l'offre annuelle
+    inclus:
+      - Logements et états des lieux illimités
+      - Entrée, sortie et comparaison automatique
+      - Photos, signatures, rapport PDF
+      - Application à votre nom
+      - Fonctionne hors-ligne
+  - id: particulierVie
+    nom: Particulier à vie
+    prix: "50 €"
+    periode: "une fois **"
+    accroche: Payez une fois, utilisez-la pendant toute la durée de vos baux.
+    lien: particulierVie
+    bouton: Acheter à vie
+    vedette: true
+    badge: Le plus rentable
+    inclus:
+      - Tout ce que contient l'offre Particulier
+      - Aucun renouvellement, jamais
+      - Mises à jour incluses **
+      - L'app installée continue de fonctionner, quoi qu'il arrive
+  - id: pro
+    nom: Pro
+    prix: "5 €"
+    periode: "/ mois"
+    accroche: Petites agences, conciergeries, gestionnaires Airbnb.
+    lien: pro
+    bouton: Démarrer l'offre Pro
+    inclus:
+      - Tout ce que contient l'offre Particulier
+      - Logo et nom de votre agence sur l'app et les rapports
+      - Modèles de pièces préparés pour vos biens
+      - Installable sur tous les téléphones de l'équipe
+      - Support prioritaire
+      - Sans engagement

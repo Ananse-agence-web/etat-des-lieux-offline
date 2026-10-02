@@ -5,25 +5,25 @@
         <img src="{{ "images/logo.svg" | relURL }}" alt="" width="32" height="32">
         <span>État des lieux <strong>Offline</strong></span>
       </a>
-      <p class="pied-texte">L'état des lieux d'entrée et de sortie sur téléphone. Aucune donnée envoyée sur un serveur : tout reste dans votre téléphone.</p>
-      <p class="pied-texte">🍪 Ce site n'utilise <strong>aucun cookie</strong> ni traceur.</p>
+      <p class="pied-texte">{{ site.Data.accueil.pied01 }}</p>
+      <p class="pied-texte">{{ site.Data.accueil.pied02 | safeHTML }}</p>
     </div>
     <div>
-      <h3>Produit</h3>
-      <a href="{{ "" | relURL }}#atouts">Points forts</a>
-      <a href="{{ "" | relURL }}#tarifs">Tarifs</a>
-      <a href="{{ "" | relURL }}#faq">Questions fréquentes</a>
-      <a href="{{ "blog/" | relURL }}">Blog</a>
+      <h3>{{ site.Data.accueil.pied03 }}</h3>
+      <a href="{{ "" | relURL }}#atouts">{{ site.Data.accueil.pied04 }}</a>
+      <a href="{{ "" | relURL }}#tarifs">{{ site.Data.accueil.pied05 }}</a>
+      <a href="{{ "" | relURL }}#faq">{{ site.Data.accueil.pied06 }}</a>
+      <a href="{{ "blog/" | relURL }}">{{ site.Data.accueil.pied07 }}</a>
     </div>
     <div>
-      <h3>Informations</h3>
-      <a href="{{ "mentions-legales/" | relURL }}">Mentions légales</a>
-      <a href="{{ "cgv/" | relURL }}">Conditions générales</a>
-      <a href="{{ "confidentialite/" | relURL }}">Confidentialité</a>
-      <a href="mailto:{{ site.Params.email }}">Contact</a>
+      <h3>{{ site.Data.accueil.pied08 }}</h3>
+      <a href="{{ "mentions-legales/" | relURL }}">{{ site.Data.accueil.pied09 }}</a>
+      <a href="{{ "cgv/" | relURL }}">{{ site.Data.accueil.pied10 }}</a>
+      <a href="{{ "confidentialite/" | relURL }}">{{ site.Data.accueil.pied11 }}</a>
+      <a href="mailto:{{ site.Data.infos.email }}">{{ site.Data.accueil.pied12 }}</a>
     </div>
   </div>
   <div class="conteneur pied-bas">
-    <small>© {{ now.Year }} {{ site.Params.marque }}. Les informations juridiques de ce site sont générales et ne remplacent pas un conseil personnalisé.</small>
+    <small>© {{ now.Year }} {{ with site.Data.infos.raison_sociale }}{{ . }}{{ else }}{{ site.Params.marque }}{{ end }}{{ with site.Data.infos.siret }} · SIRET {{ . }}{{ end }}{{ with site.Data.infos.adresse }} · {{ . }}{{ end }}{{ with site.Data.infos.telephone }} · {{ . }}{{ end }}. Les informations juridiques de ce site sont générales et ne remplacent pas un conseil personnalisé.</small>
   </div>
 </footer>

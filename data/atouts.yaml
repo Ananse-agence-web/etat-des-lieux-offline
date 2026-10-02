@@ -1,40 +1,41 @@
 # Points forts affichés sur la page d'accueil (icône = nom dans layouts/partials/icone.html)
-- icone: wifi-off
-  titre: Fonctionne sans réseau
-  texte: Cave, sous-sol, immeuble ancien, campagne… L'application tourne entièrement sur le téléphone. Pas de 4G ? Aucun problème.
-  vedette: true
-- icone: lock
-  titre: Rien n'est envoyé sur Internet
-  texte: Vos données ne partent sur aucun serveur, aucun « cloud ». Noms des locataires, photos, signatures restent dans votre téléphone. Nous-mêmes n'y avons pas accès. Idéal pour le RGPD.
-  vedette: true
-- icone: tag
-  titre: 50 € une fois, ou 5 € par an
-  texte: Pas de crédits à racheter à chaque état des lieux, pas de prix au logement. Logements et états des lieux illimités.
-  vedette: true
-- icone: compare
-  titre: Sortie comparée à l'entrée
-  texte: L'état des lieux de sortie reprend automatiquement l'entrée. Les dégradations sont détectées et résumées dans une synthèse claire.
-- icone: zap
-  titre: Un tap par élément
-  texte: "Très bon, Bon, Moyen, Mauvais, Absent : un seul geste, d'une main. « Tout mettre à Bon » en un clic, dictée vocale pour les commentaires."
-- icone: camera
-  titre: Photos horodatées
-  texte: Photos prises directement, compressées, avec la date et l'heure incrustées. Les photos d'entrée restent visibles pendant la sortie.
-- icone: pen
-  titre: Signature au doigt + GPS
-  texte: Bailleur et locataire signent sur l'écran. Position GPS et heure enregistrées. Un état des lieux signé est verrouillé.
-- icone: mail-check
-  titre: Envoi et accusé de réception
-  texte: Le rapport PDF est envoyé aux deux parties, qui confirment par un simple « Bien reçu, OK ». Une trace datée, simple et de bonne foi.
-- icone: table
-  titre: Reprend vos fichiers Excel
-  texte: Vous avez déjà vos états des lieux sous Excel ? Importez-les tels quels. Export CSV, ZIP complet et sauvegarde à tout moment.
-- icone: palette
-  titre: À votre nom, à vos couleurs
-  texte: L'application et les rapports portent votre nom — ou le logo de votre agence avec l'offre Pro.
-- icone: shield
-  titre: Lisible dans 6 ans
-  texte: Un bail dure des années. Nos formats de fichiers sont versionnés et testés pour qu'un export d'aujourd'hui se relise encore demain.
-- icone: phone
-  titre: S'installe comme une app
-  texte: Ajoutez-la à l'écran d'accueil de votre iPhone ou Android. Pas de store, pas de mise à jour à gérer.
+atouts:
+  - icone: wifi-off
+    titre: Fonctionne sans réseau
+    texte: Cave, sous-sol, immeuble ancien, campagne… L'application tourne entièrement sur le téléphone. Pas de 4G ? Aucun problème.
+    vedette: true
+  - icone: lock
+    titre: Rien n'est envoyé sur Internet
+    texte: Vos données ne partent sur aucun serveur, aucun « cloud ». Noms des locataires, photos, signatures restent dans votre téléphone. Nous-mêmes n'y avons pas accès. Idéal pour le RGPD.
+    vedette: true
+  - icone: tag
+    titre: 50 € une fois, ou 5 € par an
+    texte: Pas de crédits à racheter à chaque état des lieux, pas de prix au logement. Logements et états des lieux illimités.
+    vedette: true
+  - icone: compare
+    titre: Sortie comparée à l'entrée
+    texte: L'état des lieux de sortie reprend automatiquement l'entrée. Les dégradations sont détectées et résumées dans une synthèse claire.
+  - icone: zap
+    titre: Un tap par élément
+    texte: "Très bon, Bon, Moyen, Mauvais, Absent : un seul geste, d'une main. « Tout mettre à Bon » en un clic, dictée vocale pour les commentaires."
+  - icone: camera
+    titre: Photos horodatées
+    texte: Photos prises directement, compressées, avec la date et l'heure incrustées. Les photos d'entrée restent visibles pendant la sortie.
+  - icone: pen
+    titre: Signature au doigt + GPS
+    texte: Bailleur et locataire signent sur l'écran. Position GPS et heure enregistrées. Un état des lieux signé est verrouillé.
+  - icone: mail-check
+    titre: Envoi et accusé de réception
+    texte: Le rapport PDF est envoyé aux deux parties, qui confirment par un simple « Bien reçu, OK ». Une trace datée, simple et de bonne foi.
+  - icone: table
+    titre: Reprend vos fichiers Excel
+    texte: Vous avez déjà vos états des lieux sous Excel ? Importez-les tels quels. Export CSV, ZIP complet et sauvegarde à tout moment.
+  - icone: palette
+    titre: À votre nom, à vos couleurs
+    texte: L'application et les rapports portent votre nom — ou le logo de votre agence avec l'offre Pro.
+  - icone: shield
+    titre: Lisible dans 6 ans
+    texte: Un bail dure des années. Nos formats de fichiers sont versionnés et testés pour qu'un export d'aujourd'hui se relise encore demain.
+  - icone: phone
+    titre: S'installe comme une app
+    texte: Ajoutez-la à l'écran d'accueil de votre iPhone ou Android. Pas de store, pas de mise à jour à gérer.

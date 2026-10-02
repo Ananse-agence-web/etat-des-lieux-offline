@@ -40,3 +40,7 @@ Hugo **extended 0.121.1** (même version dans le workflow GitHub).
 ## Publier
 
 Chaque push sur `main` construit et publie le site sur GitHub Pages (`.github/workflows/hugo.yml`).
+
+## Administration (Decap CMS)
+
+https://etat-des-lieux.ananse.fr/admin/ : guides (blog), atouts, tarifs, FAQ, tous les textes de l'accueil (`data/accueil.yaml`, extraits des gabarits), coordonnées (`data/infos.yaml` : e-mail, SIRET, téléphone…) et pages légales. Connexion GitHub via le service commun de www.ananse.fr. Chaque enregistrement republie le site.
