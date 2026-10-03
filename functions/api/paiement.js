@@ -46,7 +46,8 @@ export async function onRequestPost({ request, env }) {
     const e = s.error || {};
     console.error("Stripe", r.status, e.type, e.code, e.param, e.message);
     return texte(`Le paiement n'a pas pu démarrer. Réessayez dans un instant, ou écrivez-nous.
-(code : ${r.status} ${e.type || ""} ${e.code || ""} ${e.param || ""})`, 502);
+(code : ${r.status} ${e.type || ""} ${e.code || ""} ${e.param || ""})${r.status === 400 && e.message ? `
+${e.message}` : ""}`, 502);
   }
   return Response.redirect(s.url, 303);
 }
