@@ -41,6 +41,12 @@ export async function onRequestPost({ request, env }) {
     body: p,
   });
   const s = await r.json();
-  if (!r.ok || !s.url) return texte("Le paiement n'a pas pu démarrer. Réessayez dans un instant, ou écrivez-nous.", 502);
+  if (!r.ok || !s.url) {
+    // Détail visible dans les journaux Cloudflare (Functions > Real-time logs) ; code court affiché pour le diagnostic.
+    const e = s.error || {};
+    console.error("Stripe", r.status, e.type, e.code, e.param, e.message);
+    return texte(`Le paiement n'a pas pu démarrer. Réessayez dans un instant, ou écrivez-nous.
+(code : ${r.status} ${e.type || ""} ${e.code || ""} ${e.param || ""})`, 502);
+  }
   return Response.redirect(s.url, 303);
 }
