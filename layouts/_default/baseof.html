@@ -4,12 +4,23 @@
   {{ partial "head.html" . }}
 </head>
 <body class="{{ if .IsHome }}accueil{{ else }}page{{ end }}">
+  {{- if site.Params.preprod }}
+  <p style="margin:0;padding:.45rem 16px;text-align:center;font:600 .82rem/1.4 system-ui,sans-serif;background:#5b2bd6;color:#fff">Préproduction · paiement Stripe en <strong>mode test</strong> : carte 4242 4242 4242 4242, date future, n'importe quel code. Aucun débit réel.</p>
+  {{- end }}
   <a class="evitement" href="#contenu">Aller au contenu</a>
   {{ partial "entete.html" . }}
   <main id="contenu">
     {{ block "main" . }}{{ end }}
   </main>
   {{ partial "pied.html" . }}
+  {{- /* Offres pour le paiement Stripe (lu par functions/api/paiement.js) */ -}}
+  {{- if site.Params.stripe }}
+  {{- $o := dict }}
+  {{- range site.Data.tarifs.tarifs }}{{ $t := . }}{{ with $t.stripe }}
+  {{- $o = merge $o (dict $t.id (dict "nom" (printf "État des lieux Offline — %s (%s %s)" $t.nom $t.prix $t.periode | replaceRE ` \*+` "") "montant" .montant "recurrence" .recurrence)) }}
+  {{- end }}{{ end }}
+  {{- $offres := $o | jsonify | resources.FromString "offres.json" }}{{ $_ := $offres.RelPermalink }}
+  {{- end }}
   {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
   <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
   {{ if or site.Params.paiement.particulierAn site.Params.paiement.particulierVie site.Params.paiement.pro }}

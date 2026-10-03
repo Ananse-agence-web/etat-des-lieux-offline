@@ -336,6 +336,8 @@ p { margin: 0 0 1em; }
 .tarif-prix strong { font-size: 3rem; font-weight: 800; letter-spacing: -.03em; }
 .tarif-prix span { color: var(--texte-doux); font-weight: 600; }
 .tarif ul { list-style: none; padding: 0; margin: 0 0 1.8rem; display: grid; gap: .6rem; flex: 1; align-content: start; }
+.tarif-paiement { margin: 0; display: grid; }
+.tarif-paiement .bouton { font-family: inherit; }
 .tarif li { display: flex; gap: .55rem; font-size: .96rem; }
 .tarif li .icone { color: var(--vert); margin-top: .15em; }
 .tarif .bouton { width: 100%; }

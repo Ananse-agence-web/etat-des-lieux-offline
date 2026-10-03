@@ -238,7 +238,12 @@
         <ul>
           {{ range .inclus }}<li>{{ partial "icone.html" "check" }} {{ . }}</li>{{ end }}
         </ul>
-        {{ if $lien }}
+        {{ if and site.Params.stripe .stripe }}
+        <form method="post" action="{{ "api/paiement" | relURL }}" class="tarif-paiement">
+          <input type="hidden" name="offre" value="{{ .id }}">
+          <button type="submit" class="bouton{{ if not .vedette }} bouton-secondaire{{ end }}">{{ .bouton }}</button>
+        </form>
+        {{ else if $lien }}
         <a class="bouton{{ if not .vedette }} bouton-secondaire{{ end }} lemonsqueezy-button" href="{{ $lien }}?embed=1&amp;media=0">{{ .bouton }}</a>
         {{ else }}
         {{ $sujet := printf "Commande — %s (%s)" .nom .prix | replaceRE " " "%20" }}

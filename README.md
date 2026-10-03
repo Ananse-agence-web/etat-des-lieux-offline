@@ -37,6 +37,17 @@ Hugo **extended 0.121.1** (même version dans le workflow GitHub).
    Dès qu'un lien est renseigné, le paiement s'ouvre en fenêtre intégrée au site (script `lemon.js`).
 5. Compléter les `[À COMPLÉTER]` de `content/mentions-legales.md`, `content/cgv.md` et `content/confidentialite.md`.
 
+## Paiement Stripe (branche `preprod`)
+
+Préproduction : https://etat-des-lieux.an6.fr (projet Cloudflare Pages `etat-des-lieux-preprod`, branche `preprod`, `noindex`).
+
+- Bouton « Acheter » → formulaire POST vers `functions/api/paiement.js` (Cloudflare Pages Function) → session **Stripe Checkout** → retour sur `/merci/`.
+- Montants réellement débités : champ `stripe` de chaque offre dans `data/tarifs.yaml` (centimes + récurrence `year` / `month` / vide = paiement unique). Hugo en fait `/offres.json`, lu par la fonction.
+- Activé seulement si la variable de build `HUGO_PARAMS_STRIPE=true` est définie (sinon : Lemon Squeezy ou e-mail, comme avant). `HUGO_PARAMS_PREPROD=true` affiche le bandeau « mode test ».
+- Clé : variable Cloudflare **`STRIPE_SECRET_KEY`** (type Secret), clé de **test** `sk_test_…` en préprod. Jamais dans le code.
+- Carte de test : 4242 4242 4242 4242, date future, n'importe quel code.
+- Avant la prod avec Stripe : adapter CGV, mentions et confidentialité (Ananse devient vendeur, plus Lemon Squeezy), ajouter un webhook pour suivre les abonnements.
+
 ## Publier
 
 Chaque push sur `main` construit et publie le site sur GitHub Pages (`.github/workflows/hugo.yml`).
