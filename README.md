@@ -46,6 +46,7 @@ Préproduction : https://etat-des-lieux.an6.fr (projet Cloudflare Pages `etat-de
 - Activé seulement si la variable de build `HUGO_PARAMS_STRIPE=true` est définie (sinon : Lemon Squeezy ou e-mail, comme avant). `HUGO_PARAMS_PREPROD=true` affiche le bandeau « mode test ».
 - Clé : variable Cloudflare **`STRIPE_SECRET_KEY`** (type Secret), clé de **test** `sk_test_…` en préprod. Jamais dans le code.
 - Carte de test : 4242 4242 4242 4242, date future, n'importe quel code.
+- **Managed Payments** est activé par défaut sur le compte Stripe (Stripe revendeur, gère la TVA) : chaque offre doit avoir un `tax_code` (dans `data/tarifs.yaml`). Codes utilisés : `txcd_10103100` (perso), `txcd_10103101` (pro). En cas d'échec, la page affiche le code d'erreur Stripe (détail dans Cloudflare → Functions → Real-time logs).
 - Avant la prod avec Stripe : adapter CGV, mentions et confidentialité (Ananse devient vendeur, plus Lemon Squeezy), ajouter un webhook pour suivre les abonnements.
 
 ## Publier
