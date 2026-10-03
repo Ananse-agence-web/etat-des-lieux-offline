@@ -17,7 +17,7 @@
   {{- if site.Params.stripe }}
   {{- $o := dict }}
   {{- range site.Data.tarifs.tarifs }}{{ $t := . }}{{ with $t.stripe }}
-  {{- $o = merge $o (dict $t.id (dict "nom" (printf "État des lieux Offline — %s (%s %s)" $t.nom $t.prix $t.periode | replaceRE ` \*+` "") "montant" .montant "recurrence" .recurrence)) }}
+  {{- $o = merge $o (dict $t.id (dict "nom" (printf "État des lieux Offline — %s (%s %s)" $t.nom $t.prix $t.periode | replaceRE ` \*+` "") "montant" .montant "recurrence" .recurrence "tax_code" (.tax_code | default ""))) }}
   {{- end }}{{ end }}
   {{- $offres := $o | jsonify | resources.FromString "offres.json" }}{{ $_ := $offres.RelPermalink }}
   {{- end }}

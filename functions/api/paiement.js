@@ -27,6 +27,8 @@ export async function onRequestPost({ request, env }) {
     billing_address_collection: "required",
     "metadata[offre]": id,
   });
+  // Code fiscal du produit : obligatoire si Stripe Managed Payments (Stripe revendeur) est activé sur le compte.
+  if (o.tax_code) p.set("line_items[0][price_data][product_data][tax_code]", o.tax_code);
   if (o.recurrence) {
     p.set("line_items[0][price_data][recurring][interval]", o.recurrence);
     p.set("subscription_data[metadata][offre]", id);

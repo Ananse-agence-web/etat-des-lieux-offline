@@ -1,5 +1,6 @@
 # Offres affichées dans la section Tarifs. « lien » = clé dans [params.paiement] de hugo.toml (Lemon Squeezy).
 # « stripe » = montant réellement débité, en centimes, et récurrence (year, month ; vide = paiement unique). À garder cohérent avec « prix ».
+# tax_code = code fiscal Stripe (obligatoire avec Managed Payments) : txcd_10103100 logiciel/appli usage perso, txcd_10103101 usage pro.
 tarifs:
   - id: particulierAn
     nom: Particulier
@@ -7,7 +8,7 @@ tarifs:
     periode: "/ an"
     accroche: Pour louer sereinement un ou plusieurs logements.
     lien: particulierAn
-    stripe: { montant: 500, recurrence: year }
+    stripe: { montant: 500, recurrence: year, tax_code: txcd_10103100 }
     bouton: Choisir l'offre annuelle
     inclus:
       - Logements et états des lieux illimités
@@ -21,7 +22,7 @@ tarifs:
     periode: "une fois **"
     accroche: Payez une fois, utilisez-la pendant toute la durée de vos baux.
     lien: particulierVie
-    stripe: { montant: 5000, recurrence: "" }
+    stripe: { montant: 5000, recurrence: "", tax_code: txcd_10103100 }
     bouton: Acheter à vie
     vedette: true
     badge: Le plus rentable
@@ -36,7 +37,7 @@ tarifs:
     periode: "/ mois"
     accroche: Petites agences, conciergeries, gestionnaires Airbnb.
     lien: pro
-    stripe: { montant: 500, recurrence: month }
+    stripe: { montant: 500, recurrence: month, tax_code: txcd_10103101 }
     bouton: Démarrer l'offre Pro
     inclus:
       - Tout ce que contient l'offre Particulier
